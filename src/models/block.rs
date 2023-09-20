@@ -64,9 +64,13 @@ pub fn mine (&mut self, blockchain: Blockchain) {
     audit_data.log = String::default();
         // initializes the command method 
     let syscom = Command::new("ausearch")
+        // this indicate the start time for the events pulled from the audit log
      .arg("-st")
+        // the recent option sets the chain to look for events from the last 10 minutes from the audit log
      .arg("recent")
+        // this specifies a file
      .arg("-F") 
+        // This is the path of the file that had a watch rule set for it.
      .arg("/home/sysadmin/project4/EVIDENCE")
      // this bit of code gets the standard output of the ausearch command
      .stdout(Stdio::piped())
