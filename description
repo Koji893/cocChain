@@ -1,1 +1,6 @@
-Unnamed repository; edit this file 'description' to name the repository.
+This is my du cybersecurity bootcamp project  4 
+For my project i modified code for a rudimentary block chain program in rust to use system commands to write the auditlogs to the blocks.
+The majority of this code was written by eccj222
+checkout the original @ https://github.com/ECJ222/Rust-blockchain
+I added roughly 15 lines of code the block.rs file to  run the command ausearch in the linux shell
+This allows the code to fetch events from the audit logs.
