@@ -58,18 +58,22 @@ pub fn mine (&mut self, blockchain: Blockchain) {
     
     format!("{:x}", result)
 }
-   pub fn get_audit_data(&self) -> String {
+  //this function will pass a system command to a shell and append the output to the log varaiable
+    pub fn get_audit_data(&self) -> String {
     let mut audit_data = self.clone();
     audit_data.log = String::default();
+        // initializes the command method 
     let syscom = Command::new("ausearch")
      .arg("-st")
      .arg("recent")
      .arg("-F") 
      .arg("/home/sysadmin/project4/EVIDENCE")
+     // this bit of code gets the standard output of the ausearch command
      .stdout(Stdio::piped())
      .output()
      .unwrap();
-let audit_data = String::from_utf8(syscom.stdout).unwrap();
+//converts bits from stdout to a string.
+        let audit_data = String::from_utf8(syscom.stdout).unwrap();
 audit_data
 }
 
